@@ -20,9 +20,9 @@ var bankInfo = {
   , fidorg: 'B1'
   , url: 'https://yourBanksOfxApiURL.com'
   , bankid: 0123456 /* If bank account use your bank routing number otherwise set to null */
-  , user: username
-  , pass: password
-  , accid: 0123456789
+  , user: 'username'
+  , pass: 'password'
+  , accid: 0123456789 /* Account Number */
   , acctype: 'CHECKING' /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
   , date_start: 20010125 /* Statement start date YYYYMMDDHHMMSS */
   , date_end: 20110125 /* Statement end date YYYYMMDDHHMMSS */  
@@ -30,10 +30,10 @@ var bankInfo = {
 
 //If second param is omitted JSON will be returned by default
 
-banking.getStatement(bankInfo, 'xml', function(res, err)
+banking.getStatement(bankInfo, 'xml', function(res, err){
     if(err) console.log(err)
     console.log(res);        
-}
+});
 ```
 ## Sample Response
 
