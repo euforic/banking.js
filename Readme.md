@@ -12,7 +12,7 @@ $ npm install banking
 
 ## Usage
 
-```javascript
+```json
 var banking = require('banking');
 
 var bankInfo = {
