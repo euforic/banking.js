@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    font: 15px/1.4 "Helvetica Nueue", "Lucida Grande", Arial, sans-serif;
+    text-align: center;
+    background: #F0F0F0;
+}
+h1 {
+    font: 45px/3.5 "Helvetica Nueue", "Lucida Grande", Arial, sans-serif;
+    margin: 0 auto 15px auto;
+    outline: none;
+}
+.heading {
+    font: 20px "Helvetica Nueue", "Lucida Grande", Arial, sans-serif;
+    float: left;
+    margin: 0px 25px 15px 0px;
+    padding: 0px 25px 0px 25px;
+    width: 40%;
+    color: #000000;
+}
+#container {
+    margin: 0 auto 20px auto;
+    width: 960px;
+    text-align: left;
+}
+#header {
+    position: relative;
+    padding: 0px 0;
+}
+#tagline {
+    font: 25px/3.5 "Helvetica Nueue", "Lucida Grande", Arial, sans-serif;
+    margin: 0 auto 15px auto;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    filter:alpha(opacity=5);
+}
+pre {
+    font: 14px "Helvetica Nueue", "Lucida Grande", Arial, sans-serif;
+    float: left;
+    margin: 0px 35px 35px 0px;
+    padding: 0px 25px 0px 25px;
+    width: 40%;
+    background: #ececec;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-box-shadow: 0px 0px 20px 5px #555555;
+    -moz-box-shadow: 0px 0px 20px 5px #555555;
+    box-shadow: 0px 0px 20px 5px #555;
+    color: #555;
+}

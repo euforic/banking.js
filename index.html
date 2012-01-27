@@ -1,1 +1,148 @@
-My Page
+
+<html>
+  <head>
+    <title>Banking.js - The Missing API for Banks</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <a href="http://github.com/euforic/banking.js"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 50" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+      <div id="header">
+        <h1>Banking.js
+        <span id="tagline">The Missing API for Banks</span>
+        </h1>
+        <h2 class="heading">
+        Request
+        </h2>
+        <h2 class="heading">
+        Response
+        </h2>
+        <pre id="request">
+          <code>
+var banking = require(&#39;banking&#39;);
+
+var bankInfo = {
+    fid: 10898
+  , fidorg: &#39;B1&#39;
+  , url: &#39;https://yourBanksOfxApiURL.com&#39;
+  , bankid: 0123456 
+  , user: username
+  , pass: password
+  , accid: 0123456789
+  , acctype: &#39;CHECKING&#39;
+  , date_start: 20010125 
+  , date_end: 20110125 
+};
+
+banking.getStatement(bankInfo, function(res, err){
+    if(err) console.log(err)
+    console.log(res);
+}
+    </code>
+        </pre>
+        <pre id="response">
+<code>
+{
+  &quot;OFX&quot;: {
+    &quot;SIGNONMSGSRSV1&quot;: {
+      &quot;SONRS&quot;: {
+        &quot;STATUS&quot;: {
+          &quot;CODE&quot;: &quot;0&quot;,
+          &quot;SEVERITY&quot;: &quot;INFO&quot;,
+          &quot;MESSAGE&quot;: &quot;SUCCESS&quot;
+        },
+        &quot;DTSERVER&quot;: &quot;20120126212302.454[-8:PST]&quot;,
+        &quot;LANGUAGE&quot;: &quot;ENG&quot;,
+        &quot;FI&quot;: {
+          &quot;ORG&quot;: &quot;DI&quot;,
+          &quot;FID&quot;: &quot;321081669&quot;
+        }
+      }
+    },
+    &quot;BANKMSGSRSV1&quot;: {
+      &quot;STMTTRNRS&quot;: {
+        &quot;TRNUID&quot;: &quot;BiJNgqjvbw5vg1&quot;,
+        &quot;STATUS&quot;: {
+          &quot;CODE&quot;: &quot;0&quot;,
+          &quot;SEVERITY&quot;: &quot;INFO&quot;,
+          &quot;MESSAGE&quot;: &quot;SUCCESS&quot;
+        },
+        &quot;CLTCOOKIE&quot;: &quot;iXus7&quot;,
+        &quot;STMTRS&quot;: {
+          &quot;CURDEF&quot;: &quot;USD&quot;,
+          &quot;BANKACCTFROM&quot;: {
+            &quot;BANKID&quot;: &quot;321081669&quot;,
+            &quot;ACCTID&quot;: &quot;3576960405&quot;,
+            &quot;ACCTTYPE&quot;: &quot;CHECKING&quot;
+          },
+          &quot;BANKTRANLIST&quot;: {
+            &quot;DTSTART&quot;: &quot;20010125120000.000&quot;,
+            &quot;DTEND&quot;: &quot;20120126212302.638[-8:PST]&quot;,
+            &quot;STMTTRN&quot;: [{
+              &quot;TRNTYPE&quot;: &quot;DEP&quot;,
+              &quot;DTPOSTED&quot;: &quot;20110407070000.000&quot;,
+              &quot;DTAVAIL&quot;: &quot;20110407070000.000&quot;,
+              &quot;TRNAMT&quot;: &quot;1934.65&quot;,
+              &quot;FITID&quot;: &quot;156599402&quot;,
+              &quot;NAME&quot;: &quot;CLIENT DEPOSIT&quot;,
+              &quot;MEMO&quot;: &quot;CLIENT DEPOSIT&quot;
+            }, {
+              &quot;TRNTYPE&quot;: &quot;DEBIT&quot;,
+              &quot;DTPOSTED&quot;: &quot;20110412070000.000&quot;,
+              &quot;DTAVAIL&quot;: &quot;20110412070000.000&quot;,
+              &quot;TRNAMT&quot;: &quot;-700.00&quot;,
+              &quot;FITID&quot;: &quot;156950780&quot;,
+              &quot;NAME&quot;: &quot;DOMESTIC WIRE FUNDS-DEBIT&quot;,
+              &quot;MEMO&quot;: &quot;DOMESTIC WIRE FUNDS-DEBIT&quot;
+            }, {
+              &quot;TRNTYPE&quot;: &quot;CHECK&quot;,
+              &quot;DTPOSTED&quot;: &quot;20110414070000.000&quot;,
+              &quot;DTAVAIL&quot;: &quot;20110414070000.000&quot;,
+              &quot;TRNAMT&quot;: &quot;-38.20&quot;,
+              &quot;FITID&quot;: &quot;157222076&quot;,
+              &quot;CHECKNUM&quot;: &quot;10004&quot;,
+              &quot;NAME&quot;: &quot;CHECK WITHDRAWAL&quot;,
+              &quot;MEMO&quot;: &quot;CHECK WITHDRAWAL&quot;
+            }, {
+              &quot;TRNTYPE&quot;: &quot;CHECK&quot;,
+              &quot;DTPOSTED&quot;: &quot;20110414070000.000&quot;,
+              &quot;DTAVAIL&quot;: &quot;20110414070000.000&quot;,
+              &quot;TRNAMT&quot;: &quot;-349.79&quot;,
+              &quot;FITID&quot;: &quot;157222077&quot;,
+              &quot;CHECKNUM&quot;: &quot;10006&quot;,
+              &quot;NAME&quot;: &quot;CHECK WITHDRAWAL&quot;,
+              &quot;MEMO&quot;: &quot;CHECK WITHDRAWAL&quot;
+            }]
+          },
+          &quot;LEDGERBAL&quot;: {
+            &quot;BALAMT&quot;: &quot;1661.41&quot;,
+            &quot;DTASOF&quot;: &quot;20120126212302.751[-8:PST]&quot;
+          },
+          &quot;AVAILBAL&quot;: {
+            &quot;BALAMT&quot;: &quot;2761.41&quot;,
+            &quot;DTASOF&quot;: &quot;20120126212302.751[-8:PST]&quot;
+          }
+        }
+      }
+    }
+  }
+}
+    </code>
+        </pre>
+      </div>
+    </div>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-28690146-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+  </body>
+</html>
