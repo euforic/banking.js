@@ -33,6 +33,13 @@ h1 {
     -moz-opacity: 0.5;
     filter:alpha(opacity=5);
 }
+#subtag {
+    font: 15px/3.5 "Helvetica Nueue", "Lucida Grande", Arial, sans-serif;
+    margin: 0 auto 15px auto;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    filter:alpha(opacity=5);
+}
 pre {
     font: 14px "Helvetica Nueue", "Lucida Grande", Arial, sans-serif;
     float: left;
