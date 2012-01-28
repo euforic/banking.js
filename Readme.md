@@ -44,7 +44,6 @@ banking.parseOfxFile('/myfile.ofx', function (res, err) {
   if(err) done(err)
   console.log(res); 
 });
-
 ```
 
 ### Parse Ofx String
@@ -56,8 +55,6 @@ banking.parseOfxString('SomeSuperLongOfxString', function (res, err) {
 });
 ```
 
-
-```
 ## Sample Response
 
 ```javascript
