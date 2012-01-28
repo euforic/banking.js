@@ -1,18 +1,26 @@
 {
     "name": "banking"
   , "description": "The missing Bank API for getting you statement data"
-  , "version": "0.1.0"
+  , "version": "0.2.0"
   , "author": "Christian Sullivan <cs@euforic.co>"
   , "keywords": ["banking", "ofx", "financial", "bank"]
   , "private": false
   , "homepage": "http://euforic.github.com/banking.js"
   , "dependencies": { 
-        "xml2json": ">=0.2.4"
-      , "request":">=2.1.1" 
+        "xml2json": "0.2.4"
+      , "request": "2.1.1" 
     }
+  , "devDependencies": {
+        "mocha": "0.10.2"
+      , "should": "0.5.1"
+  }
   , "repository": {
         "type": "git"
      ,  "url": "http://github.com/euforic/banking.js.git" }
   , "main": "lib/banking.js"
+  , "scripts": {
+      "prepublish" : "npm prune",
+      "test": "make test"
+  }
   , "engines": { "node": ">= 0.6.2" }
 }

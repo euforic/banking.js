@@ -1,4 +1,4 @@
-# Banking.js 
+# [Banking.js](http://euforic.co/banking.js) [![Build Status](https://secure.travis-ci.org/euforic/banking.png)](http://travis-ci.org/euforic/banking)
  
 ## The Missing API for your bank.  
   * Bank statement results in JSON or Valid XML
@@ -12,7 +12,9 @@ $ npm install banking
 
 ## Usage
 
-```json
+### Get Statement from Bank
+
+```javascript
 var banking = require('banking');
 
 var bankInfo = {
@@ -34,6 +36,27 @@ banking.getStatement(bankInfo, 'xml', function(res, err){
     if(err) console.log(err)
     console.log(res);        
 });
+
+### Parse file(Ofx|Qfx)
+
+```javascript
+banking.parseOfxFile('/myfile.ofx', function (res, err) {
+  if(err) done(err)
+  console.log(res); 
+});
+
+```
+
+### Parse Ofx String
+
+```javascript
+banking.parseOfxString('SomeSuperLongOfxString', function (res, err) {
+  if(err) done(err)
+  console.log(res);  
+});
+```
+
+
 ```
 ## Sample Response
 
