@@ -15,10 +15,12 @@ The banks crappy malformed version of XML that that many finacial apps such as q
 ### The Long Version
 
 Open Financial Exchange
+
   * The file extension .ofx is associated with an Open Financial Exchange file as a standard format for the exchange of financial data between institutions. 
   * This file is universally accepted by financial software, including Intuit Quicken, Microsoft Money and GnuCash.
 
 Background
+
   * The Open Financial Exchange file format was created in 1997 via a joint venture by CheckFree, Intuit and Microsoft. 
   * The purpose was to allow for a universally accepted financial format used to broker transactions on the Internet. 
   * The .ofx file format is seen when dealing with financial transactions involving consumers, businesses, stocks and mutual funds.
