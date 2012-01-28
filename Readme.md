@@ -42,7 +42,8 @@ banking.getStatement(bankInfo, 'xml', function(res, err){
 });
 ```
 
-### Parse file(Ofx|Qfx)
+### Parse file (Ofx|Qfx)  
+Download file for quickbooks import from your bank and parse
 
 ```javascript
 banking.parseOfxFile('/myfile.ofx', function (res, err) {
