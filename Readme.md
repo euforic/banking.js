@@ -1,10 +1,28 @@
 # [Banking.js](http://euforic.co/banking.js) [![Build Status](https://secure.travis-ci.org/euforic/banking.js.png)](http://travis-ci.org/euforic/banking.js)
- 
+
 ## The Missing API for your bank.  
   * Retrieve all of your bank transactions similiar to how quickbooks does it.
   * No need to depend on or pay for third party services
   * Bank statement results in JSON or Valid XML
   * Supports all financial institutions (File an issue if yours does not work)
+
+## What is OFX?
+
+### The Short Version
+
+The banks crappy malformed version of XML that that many finacial apps such as quickbooks and quicken use to import your bank transactions from your bank acount, credit card, money market, etc..
+
+### The Long Version
+
+Open Financial Exchange
+  * The file extension .ofx is associated with an Open Financial Exchange file as a standard format for the exchange of financial data between institutions. 
+  * This file is universally accepted by financial software, including Intuit Quicken, Microsoft Money and GnuCash.
+
+Background
+  * The Open Financial Exchange file format was created in 1997 via a joint venture by CheckFree, Intuit and Microsoft. 
+  * The purpose was to allow for a universally accepted financial format used to broker transactions on the Internet. 
+  * The .ofx file format is seen when dealing with financial transactions involving consumers, businesses, stocks and mutual funds.
+  * [OFX on Wikipedia](http://en.wikipedia.org/wiki/Open_Financial_Exchange)
 
 ## Installation  
 
