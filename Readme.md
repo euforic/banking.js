@@ -14,6 +14,8 @@ $ npm install banking
 
 ## Usage
 
+[Find your banks connection details Here](http://www.ofxhome.com/index.php/home/directory)
+
 ### Get Statement from Bank
 
 ```javascript
