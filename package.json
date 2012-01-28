@@ -3,7 +3,7 @@
   , "description": "The missing Bank API for getting you statement data"
   , "version": "0.2.0"
   , "author": "Christian Sullivan <cs@euforic.co>"
-  , "keywords": ["banking", "ofx", "financial", "bank"]
+  , "keywords": ["banking", "ofx", "financial", "bank", "quickbooks"]
   , "private": false
   , "homepage": "http://euforic.github.com/banking.js"
   , "dependencies": { 

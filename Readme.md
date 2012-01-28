@@ -1,6 +1,8 @@
 # [Banking.js](http://euforic.co/banking.js) [![Build Status](https://secure.travis-ci.org/euforic/banking.js.png)](http://travis-ci.org/euforic/banking.js)
  
 ## The Missing API for your bank.  
+  * Retrieve all of your bank transactions similiar to how quickbooks does it.
+  * No need to depend on or pay for third party services
   * Bank statement results in JSON or Valid XML
   * Supports all financial institutions (File an issue if yours does not work)
 
