@@ -1,0 +1,145 @@
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+ENCODING:USASCII
+CHARSET:1252
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+
+<OFX>
+  <SIGNONMSGSRSV1>
+    <SONRS>
+      <STATUS>
+        <CODE>0
+        <SEVERITY>INFO
+      </STATUS>
+      <DTSERVER>20120127235919.500
+      <LANGUAGE>ENG
+      <DTPROFUP>20050531070000.000
+      <FI>
+        <ORG>WFB
+        <FID>3000
+      </FI>
+      <INTU.BID>3000
+      <INTU.USERID>xxx34tf
+    </SONRS>
+  </SIGNONMSGSRSV1>
+  <BANKMSGSRSV1>
+    <STMTTRNRS>
+      <TRNUID>0
+      <STATUS>
+        <CODE>0
+        <SEVERITY>INFO
+      </STATUS>
+      <STMTRS>
+        <CURDEF>USD
+        <BANKACCTFROM>
+          <BANKID>000000000
+          <ACCTID>1234567890
+          <ACCTTYPE>CHECKING
+        </BANKACCTFROM>
+        <BANKTRANLIST>
+          <DTSTART>20120101080000.000
+          <DTEND>20120126080000.000
+          <STMTTRN>
+            <TRNTYPE>DEBIT
+            <DTPOSTED>20120103120000.000
+            <TRNAMT>-49.95
+            <FITID>201201031
+            <NAME>PLANET BEACH AL001
+            <MEMO>RECUR DEBIT CRD PMT0
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DIRECTDEBIT
+            <DTPOSTED>20120105120000.000
+            <TRNAMT>-39.00
+            <FITID>201201053
+            <NAME>CITY OF FAIRHOPE
+            <MEMO>UTILITIES 24-028490
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>CREDIT
+            <DTPOSTED>20120105120000.000
+            <TRNAMT>916.01
+            <FITID>201201054
+            <NAME>FROM CREDIT CARD OR LINE
+            <MEMO>OVERDRAFT XFER
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DIRECTDEBIT
+            <DTPOSTED>20120105120000.000
+            <TRNAMT>-3408.83
+            <FITID>201201051
+            <NAME>CITY OF FAIRHOPE
+            <MEMO>UTILITIES 24-002394
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DIRECTDEBIT
+            <DTPOSTED>20120105120000.000
+            <TRNAMT>-48.36
+            <FITID>201201052
+            <NAME>CITY OF FAIRHOPE
+            <MEMO>UTILITIES 24-002393
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DIRECTDEBIT
+            <DTPOSTED>20120109120000.000
+            <TRNAMT>-114.70
+            <FITID>201201091
+            <NAME>ATT
+            <MEMO>Payment JUAN
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>CREDIT
+            <DTPOSTED>20120109120000.000
+            <TRNAMT>114.70
+            <FITID>201201092
+            <NAME>FROM CREDIT CARD OR LINE
+            <MEMO>OVERDRAFT XFER
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>CREDIT
+            <DTPOSTED>20120112120000.000
+            <TRNAMT>180.69
+            <FITID>201201122
+            <NAME>FROM CREDIT CARD OR LINE
+            <MEMO>OVERDRAFT XFER
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>DIRECTDEBIT
+            <DTPOSTED>20120112120000.000
+            <TRNAMT>-180.69
+            <FITID>201201121
+            <NAME>VERIZON WIRELESS
+            <MEMO>PAYMENTS 120112
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>FEE
+            <DTPOSTED>20120125120000.000
+            <TRNAMT>-9.00
+            <FITID>201201251
+            <NAME>MONTHLY SERVICE FEE
+          </STMTTRN>
+          <STMTTRN>
+            <TRNTYPE>CREDIT
+            <DTPOSTED>20120126120000.000
+            <TRNAMT>25.00
+            <FITID>201201261
+            <NAME>FROM CREDIT CARD OR LINE
+            <MEMO>OVERDRAFT XFER
+          </STMTTRN>
+        </BANKTRANLIST>
+        <LEDGERBAL>
+          <BALAMT>16.00
+          <DTASOF>20120126080000.000[0:GMT]
+        </LEDGERBAL>
+        <AVAILBAL>
+          <BALAMT>16.00
+          <DTASOF>20120126080000.000[0:GMT]
+        </AVAILBAL>
+      </STMTRS>
+    </STMTTRNRS>
+  </BANKMSGSRSV1>
+</OFX>

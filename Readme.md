@@ -1,4 +1,4 @@
-# [Banking.js](http://euforic.co/banking.js) [![Build Status](https://secure.travis-ci.org/euforic/banking.png)](http://travis-ci.org/euforic/banking)
+# [Banking.js](http://euforic.co/banking.js) [![Build Status](https://secure.travis-ci.org/euforic/banking.js.png)](http://travis-ci.org/euforic/banking.js)
  
 ## The Missing API for your bank.  
   * Bank statement results in JSON or Valid XML
