@@ -36,6 +36,7 @@ banking.getStatement(bankInfo, 'xml', function(res, err){
     if(err) console.log(err)
     console.log(res);        
 });
+```
 
 ### Parse file(Ofx|Qfx)
 
