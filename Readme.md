@@ -10,7 +10,7 @@
 
 ### The Short Version
 
-The banks crappy malformed version of XML that that many finacial apps such as quickbooks and quicken use to import your bank transactions from your bank acount, credit card, money market, etc..
+The banks crappy malformed version of XML that many finacial apps such as quickbooks and quicken use to import your bank transactions from your bank acount, credit card, money market, etc..
 
 ### The Long Version
 
