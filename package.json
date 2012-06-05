@@ -6,9 +6,9 @@
   , "keywords": ["banking", "ofx", "financial", "bank", "quickbooks"]
   , "private": false
   , "homepage": "http://euforic.github.com/banking.js"
-  , "dependencies": { 
-        "xml2json": "0.2.4"
-      , "request": "2.1.1" 
+  , "dependencies": {
+        "xml2json": ">=0.2.4"
+      , "request": ">=2.1.1"
     }
   , "devDependencies": {
         "mocha": "*"
