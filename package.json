@@ -1,7 +1,7 @@
 {
     "name": "banking"
   , "description": "The missing Bank API for getting you statement data"
-  , "version": "0.2.1"
+  , "version": "0.2.2"
   , "author": "Christian Sullivan <cs@euforic.co>"
   , "keywords": ["banking", "ofx", "financial", "bank", "quickbooks"]
   , "private": false
