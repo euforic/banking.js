@@ -1,26 +1,35 @@
 {
-    "name": "banking"
-  , "description": "The missing Bank API for getting you statement data"
-  , "version": "0.2.2"
-  , "author": "Christian Sullivan <cs@euforic.co>"
-  , "keywords": ["banking", "ofx", "financial", "bank", "quickbooks"]
-  , "private": false
-  , "homepage": "http://euforic.github.com/banking.js"
-  , "dependencies": {
-        "xml2json": ">=0.2.4"
-      , "request": ">=2.1.1"
-    }
-  , "devDependencies": {
-        "mocha": "*"
-      , "should": "*"
+  "name": "banking",
+  "description": "The missing Bank API for getting you statement data",
+  "version": "0.2.3",
+  "author": "Christian Sullivan <cs@euforic.co>",
+  "keywords": [
+    "banking",
+    "ofx",
+    "financial",
+    "bank",
+    "quickbooks"
+  ],
+  "private": false,
+  "homepage": "http://euforic.github.com/banking.js",
+  "dependencies": {
+    "request": "~2.12.0",
+    "xml2json": "~0.3.2"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/euforic/banking.js.git"
+  },
+  "main": "lib/banking.js",
+  "scripts": {
+    "prepublish": "npm prune",
+    "test": "make test"
+  },
+  "engines": {
+    "node": ">= 0.6.2"
   }
-  , "repository": {
-        "type": "git"
-     ,  "url": "http://github.com/euforic/banking.js.git" }
-  , "main": "lib/banking.js"
-  , "scripts": {
-      "prepublish" : "npm prune",
-      "test": "make test"
-  }
-  , "engines": { "node": ">= 0.6.2" }
 }
