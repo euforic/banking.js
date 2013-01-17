@@ -1,6 +1,6 @@
 # [Banking.js](http://euforic.co/banking.js) [![Build Status](https://secure.travis-ci.org/euforic/banking.js.png)](http://travis-ci.org/euforic/banking.js)
 
-## The Missing API for your bank.  
+## The Missing API for your bank.
   * Retrieve all of your bank transactions similiar to how quickbooks does it.
   * No need to depend on or pay for third party services
   * Bank statement results in JSON or Valid XML
@@ -10,23 +10,23 @@
 
 ### The Short Version
 
-The banks crappy malformed version of XML that many finacial apps such as quickbooks and quicken use to import your bank transactions from your bank acount, credit card, money market, etc..
+The banks crappy malformed version of XML that many financial apps such as quickbooks and quicken use to import your bank transactions from your bank account, credit card, money market, etc..
 
 ### The Long Version
 
 Open Financial Exchange
 
-  * The file extension .ofx is associated with an Open Financial Exchange file as a standard format for the exchange of financial data between institutions. 
+  * The file extension .ofx is associated with an Open Financial Exchange file as a standard format for the exchange of financial data between institutions.
   * This file is universally accepted by financial software, including Intuit Quicken, Microsoft Money and GnuCash.
 
 Background
 
-  * The Open Financial Exchange file format was created in 1997 via a joint venture by CheckFree, Intuit and Microsoft. 
-  * The purpose was to allow for a universally accepted financial format used to broker transactions on the Internet. 
+  * The Open Financial Exchange file format was created in 1997 via a joint venture by CheckFree, Intuit and Microsoft.
+  * The purpose was to allow for a universally accepted financial format used to broker transactions on the Internet.
   * The .ofx file format is seen when dealing with financial transactions involving consumers, businesses, stocks and mutual funds.
   * [OFX on Wikipedia](http://en.wikipedia.org/wiki/Open_Financial_Exchange)
 
-## Installation  
+## Installation
 
 ```bash
 $ npm install banking
@@ -51,24 +51,24 @@ var bankInfo = {
   , accid: 0123456789 /* Account Number */
   , acctype: 'CHECKING' /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
   , date_start: 20010125 /* Statement start date YYYYMMDDHHMMSS */
-  , date_end: 20110125 /* Statement end date YYYYMMDDHHMMSS */  
+  , date_end: 20110125 /* Statement end date YYYYMMDDHHMMSS */
 };
 
 //If second param is omitted JSON will be returned by default
 
 banking.getStatement(bankInfo, 'xml', function(res, err){
     if(err) console.log(err)
-    console.log(res);        
+    console.log(res);
 });
 ```
 
-### Parse file (Ofx|Qfx)  
+### Parse file (Ofx|Qfx)
 Download file for quickbooks import from your bank and parse
 
 ```javascript
 banking.parseOfxFile('/myfile.ofx', function (res, err) {
   if(err) done(err)
-  console.log(res); 
+  console.log(res);
 });
 ```
 
@@ -77,7 +77,7 @@ banking.parseOfxFile('/myfile.ofx', function (res, err) {
 ```javascript
 banking.parseOfxString('SomeSuperLongOfxString', function (res, err) {
   if(err) done(err)
-  console.log(res);  
+  console.log(res);
 });
 ```
 
@@ -171,7 +171,7 @@ banking.parseOfxString('SomeSuperLongOfxString', function (res, err) {
 }
 ```
 
-## TODO  
+## TODO
   * Retrieve users available accounts with out account numbers
   * Add directory of common banks
 
@@ -179,7 +179,7 @@ banking.parseOfxString('SomeSuperLongOfxString', function (res, err) {
   * [Banking Connection Parameters](http://www.ofxhome.com/index.php/home/directory)
   * [Offical OFX Home Page](http://www.ofx.net/)
 
-## License 
+## License
 
 (The MIT License)
 
