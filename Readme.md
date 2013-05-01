@@ -1,4 +1,7 @@
-# [Banking.js](http://euforic.co/banking.js) [![Build Status](https://secure.travis-ci.org/euforic/banking.js.png)](http://travis-ci.org/euforic/banking.js)
+# [Banking.js](http://euforic.co/banking.js)
+
+[![Build Status](https://secure.travis-ci.org/euforic/banking.js.png)](http://travis-ci.org/euforic/banking.js)
+[![NPM version](https://badge.fury.io/js/banking.png)](https://npmjs.org/package/banking)
 
 ## The Missing API for your bank.
   * Retrieve all of your bank transactions similiar to how quickbooks does it.
