@@ -1,10 +1,9 @@
 language: node_js
 node_js:
-  - 0.4
-  - 0.6
-  - 0.7 # development version of 0.8, may be unstable
+  - 0.8
+  - 0.10
 
 notifications:
   email:
-    - travis@euforic.co
-  irc: "irc.freenode.org#euforic"
+    - travis+bankingjs@bodhi5.com
+  irc: "irc.freenode.org#bodhi5"
