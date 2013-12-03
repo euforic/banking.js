@@ -65,7 +65,7 @@ Fetch and parse transactions for the selected date rang
 
 ```js
 // date format YYYYMMDDHHMMSS
-bank.getStatement({start:20130101, end:20131101} function(res, err){
+bank.getStatement({start:20130101, end:20131101} function(err, res){
   if(err) console.log(err)
   console.log(res);
 });
@@ -75,8 +75,7 @@ bank.getStatement({start:20130101, end:20131101} function(res, err){
 Parse an OFX file into JSON
 
 ```javascript
-banking.parseOfxFile('/myfile.ofx', function (res, err) {
-  if(err) done(err)
+banking.parseOfxFile('/myfile.ofx', function (res) {
   console.log(res);
 });
 ```
@@ -86,7 +85,6 @@ Parse an OFX string into JSON
 
 ```javascript
 Banking.parse('SomeSuperLongOfxString', function (res) {
-  if(err) done(err)
   console.log(res);
 });
 ```
