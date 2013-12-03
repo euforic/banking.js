@@ -39,34 +39,40 @@ $ npm install banking
 
 [Find your banks connection details Here](http://www.ofxhome.com/index.php/home/directory)
 
-### Get Statement from Bank
+### Banking
+Create a new instance of banking
 
 ```javascript
-var banking = require('banking');
+var Banking = require('banking');
 
-var bankInfo = {
+var bank = Banking({
     fid: 10898
-  , fidorg: 'B1'
+  , fidOrg: 'B1'
   , url: 'https://yourBanksOfxApiURL.com'
-  , bankid: 0123456 /* If bank account use your bank routing number otherwise set to null */
+  , bankId: 0123456 /* If bank account use your bank routing number otherwise set to null */
   , user: 'username'
-  , pass: 'password'
-  , accid: 0123456789 /* Account Number */
-  , acctype: 'CHECKING' /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
-  , date_start: 20010125 /* Statement start date YYYYMMDDHHMMSS */
-  , date_end: 20110125 /* Statement end date YYYYMMDDHHMMSS */
-};
-
-//If second param is omitted JSON will be returned by default
-
-banking.getStatement(bankInfo, 'xml', function(res, err){
-    if(err) console.log(err)
-    console.log(res);
+  , password: 'password'
+  , accId: 0123456789 /* Account Number */
+  , accType: 'CHECKING' /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
+  , ofxVer: 103 /* default 102 */
+  , app: 'QBKS' /* default  'QWIN' */
+  , appVer: /* default 1900 */
 });
 ```
 
-### Parse file (Ofx|Qfx)
-Download file for quickbooks import from your bank and parse
+### banking.getStatement(Obj, fn)
+Fetch and parse transactions for the selected date rang
+
+```js
+// date format YYYYMMDDHHMMSS
+bank.getStatement({start:20130101, end:20131101} function(res, err){
+  if(err) console.log(err)
+  console.log(res);
+});
+```
+
+### Banking.parseFile(Str, fn)
+Parse an OFX file into JSON
 
 ```javascript
 banking.parseOfxFile('/myfile.ofx', function (res, err) {
@@ -75,108 +81,128 @@ banking.parseOfxFile('/myfile.ofx', function (res, err) {
 });
 ```
 
-### Parse Ofx String
+### Banking.parse(Str, fn)
+Parse an OFX string into JSON
 
 ```javascript
-banking.parseOfxString('SomeSuperLongOfxString', function (res, err) {
+Banking.parse('SomeSuperLongOfxString', function (res) {
   if(err) done(err)
   console.log(res);
 });
 ```
 
 ## Sample Response
+```js
+{
+  header: {...},
+  body: {...},
+  xml: '...'
+}
+```
 
 ```javascript
 {
-  "OFX": {
-    "SIGNONMSGSRSV1": {
-      "SONRS": {
-        "STATUS": {
-          "CODE": "0",
-          "SEVERITY": "INFO",
-          "MESSAGE": "SUCCESS"
-        },
-        "DTSERVER": "20120126212302.454[-8:PST]",
-        "LANGUAGE": "ENG",
-        "FI": {
-          "ORG": "DI",
-          "FID": "321081669"
+  header: { 
+    OFXHEADER: '100',
+    DATA: 'OFXSGML',
+    VERSION: '102',
+    SECURITY: 'NONE',
+    ENCODING: 'USASCII',
+    CHARSET: '1252',
+    COMPRESSION: 'NONE',
+    OLDFILEUID: 'NONE',
+    NEWFILEUID: 'boiS5QeFGTVMFtvJvqLtAqCEap3cvo69' 
+  },
+  body: {
+    "OFX": {
+      "SIGNONMSGSRSV1": {
+        "SONRS": {
+          "STATUS": {
+            "CODE": "0",
+            "SEVERITY": "INFO",
+            "MESSAGE": "SUCCESS"
+          },
+          "DTSERVER": "20120126212302.454[-8:PST]",
+          "LANGUAGE": "ENG",
+          "FI": {
+            "ORG": "DI",
+            "FID": "321081669"
+          }
         }
-      }
-    },
-    "BANKMSGSRSV1": {
-      "STMTTRNRS": {
-        "TRNUID": "BiJNgqjvbw5vg18Z5T8kZASgUKmsFnNY",
-        "STATUS": {
-          "CODE": "0",
-          "SEVERITY": "INFO",
-          "MESSAGE": "SUCCESS"
-        },
-        "CLTCOOKIE": "iXus7",
-        "STMTRS": {
-          "CURDEF": "USD",
-          "BANKACCTFROM": {
-            "BANKID": "321081669",
-            "ACCTID": "3576960405",
-            "ACCTTYPE": "CHECKING"
+      },
+      "BANKMSGSRSV1": {
+        "STMTTRNRS": {
+          "TRNUID": "BiJNgqjvbw5vg18Z5T8kZASgUKmsFnNY",
+          "STATUS": {
+            "CODE": "0",
+            "SEVERITY": "INFO",
+            "MESSAGE": "SUCCESS"
           },
-          "BANKTRANLIST": {
-            "DTSTART": "20010125120000.000",
-            "DTEND": "20120126212302.638[-8:PST]",
-            "STMTTRN": [{
-              "TRNTYPE": "DEP",
-              "DTPOSTED": "20110407070000.000",
-              "DTAVAIL": "20110407070000.000",
-              "TRNAMT": "1934.65",
-              "FITID": "156599402",
-              "NAME": "CLIENT DEPOSIT",
-              "MEMO": "CLIENT DEPOSIT"
-            }, {
-              "TRNTYPE": "DEBIT",
-              "DTPOSTED": "20110412070000.000",
-              "DTAVAIL": "20110412070000.000",
-              "TRNAMT": "-700.00",
-              "FITID": "156950780",
-              "NAME": "DOMESTIC WIRE FUNDS-DEBIT CHRIST",
-              "MEMO": "DOMESTIC WIRE FUNDS-DEBIT CHRISTIAN SULLIVAN"
-            }, {
-              "TRNTYPE": "CHECK",
-              "DTPOSTED": "20110414070000.000",
-              "DTAVAIL": "20110414070000.000",
-              "TRNAMT": "-38.20",
-              "FITID": "157222076",
-              "CHECKNUM": "10004",
-              "NAME": "CHECK WITHDRAWAL",
-              "MEMO": "CHECK WITHDRAWAL"
-            }, {
-              "TRNTYPE": "CHECK",
-              "DTPOSTED": "20110414070000.000",
-              "DTAVAIL": "20110414070000.000",
-              "TRNAMT": "-349.79",
-              "FITID": "157222077",
-              "CHECKNUM": "10006",
-              "NAME": "CHECK WITHDRAWAL",
-              "MEMO": "CHECK WITHDRAWAL"
-            }]
-          },
-          "LEDGERBAL": {
-            "BALAMT": "1661.41",
-            "DTASOF": "20120126212302.751[-8:PST]"
-          },
-          "AVAILBAL": {
-            "BALAMT": "2761.41",
-            "DTASOF": "20120126212302.751[-8:PST]"
+          "CLTCOOKIE": "iXus7",
+          "STMTRS": {
+            "CURDEF": "USD",
+            "BANKACCTFROM": {
+              "BANKID": "321081669",
+              "ACCTID": "3576960405",
+              "ACCTTYPE": "CHECKING"
+            },
+            "BANKTRANLIST": {
+              "DTSTART": "20010125120000.000",
+              "DTEND": "20120126212302.638[-8:PST]",
+              "STMTTRN": [{
+                "TRNTYPE": "DEP",
+                "DTPOSTED": "20110407070000.000",
+                "DTAVAIL": "20110407070000.000",
+                "TRNAMT": "1934.65",
+                "FITID": "156599402",
+                "NAME": "CLIENT DEPOSIT",
+                "MEMO": "CLIENT DEPOSIT"
+              }, {
+                "TRNTYPE": "DEBIT",
+                "DTPOSTED": "20110412070000.000",
+                "DTAVAIL": "20110412070000.000",
+                "TRNAMT": "-700.00",
+                "FITID": "156950780",
+                "NAME": "DOMESTIC WIRE FUNDS-DEBIT CHRIST",
+                "MEMO": "DOMESTIC WIRE FUNDS-DEBIT CHRISTIAN SULLIVAN"
+              }, {
+                "TRNTYPE": "CHECK",
+                "DTPOSTED": "20110414070000.000",
+                "DTAVAIL": "20110414070000.000",
+                "TRNAMT": "-38.20",
+                "FITID": "157222076",
+                "CHECKNUM": "10004",
+                "NAME": "CHECK WITHDRAWAL",
+                "MEMO": "CHECK WITHDRAWAL"
+              }, {
+                "TRNTYPE": "CHECK",
+                "DTPOSTED": "20110414070000.000",
+                "DTAVAIL": "20110414070000.000",
+                "TRNAMT": "-349.79",
+                "FITID": "157222077",
+                "CHECKNUM": "10006",
+                "NAME": "CHECK WITHDRAWAL",
+                "MEMO": "CHECK WITHDRAWAL"
+              }]
+            },
+            "LEDGERBAL": {
+              "BALAMT": "1661.41",
+              "DTASOF": "20120126212302.751[-8:PST]"
+            },
+            "AVAILBAL": {
+              "BALAMT": "2761.41",
+              "DTASOF": "20120126212302.751[-8:PST]"
+            }
           }
         }
       }
     }
-  }
-}
+  },
+  xml: '<OFX><SIGNONMSGSRSV1><SONRS>...'
 ```
 
 ## TODO
   * Retrieve users available accounts with out account numbers
-  * Add directory of common banks
 
 ## More Information
   * [Banking Connection Parameters](http://www.ofxhome.com/index.php/home/directory)
@@ -186,7 +212,7 @@ banking.parseOfxString('SomeSuperLongOfxString', function (res, err) {
 
 (The MIT License)
 
-Copyright (c) 2010-2012 Christian Sullivan &lt;cs@euforic.co&gt;
+Copyright (c) 2013 Christian Sullivan &lt;cs@euforic.co&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

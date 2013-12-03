@@ -1,4 +1,0 @@
---require should
---ui bdd
---reporter Spec
---globals i
