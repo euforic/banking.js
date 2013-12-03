@@ -56,7 +56,7 @@ var bank = Banking({
   , accType: 'CHECKING' /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
   , ofxVer: 103 /* default 102 */
   , app: 'QBKS' /* default  'QWIN' */
-  , appVer: /* default 1900 */
+  , appVer: '1900' /* default 1700 */
 });
 ```
 
@@ -91,7 +91,9 @@ Banking.parse('SomeSuperLongOfxString', function (res) {
 });
 ```
 
-## Sample Response
+## Response
+
+Object structure 
 ```js
 {
   header: {...},
@@ -100,6 +102,7 @@ Banking.parse('SomeSuperLongOfxString', function (res) {
 }
 ```
 
+Example
 ```javascript
 {
   header: { 
@@ -199,6 +202,7 @@ Banking.parse('SomeSuperLongOfxString', function (res) {
     }
   },
   xml: '<OFX><SIGNONMSGSRSV1><SONRS>...'
+}
 ```
 
 ## TODO
