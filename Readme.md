@@ -218,7 +218,7 @@ Example
 
 (The MIT License)
 
-Copyright (c) 2013 Christian Sullivan &lt;cs@euforic.co&gt;
+Copyright (c) 2014 Christian Sullivan &lt;cs@bodhi5.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
