@@ -1,7 +1,7 @@
 {
   "name": "banking",
   "description": "The missing Bank API for getting you statement data",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Christian Sullivan <cs@euforic.co>",
   "keywords": [
     "banking",
@@ -31,6 +31,6 @@
     "test": "make test"
   },
   "engines": {
-    "node": ">= 0.6.2"
+    "node": ">= 0.8.0"
   }
 }
