@@ -69,7 +69,7 @@ Fetch and parse transactions for the selected date rang
 
 ```js
 // date format YYYYMMDDHHMMSS
-bank.getStatement({start:20130101, end:20131101} function(err, res){
+bank.getStatement({start:20130101, end:20131101}, function(err, res){
   if(err) console.log(err)
   console.log(res);
 });
