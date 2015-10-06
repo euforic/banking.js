@@ -58,6 +58,7 @@ var bank = Banking({
   , password: 'password'
   , accId: 0123456789 /* Account Number */
   , accType: 'CHECKING' /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
+  , delimiiter: '\n' , /* default \n, some use \r\n */
   , ofxVer: 103 /* default 102 */
   , app: 'QBKS' /* default  'QWIN' */
   , appVer: '1900' /* default 1700 */
