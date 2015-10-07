@@ -1,5 +1,5 @@
 # [Banking.js](http://euforic.co/banking.js)
-Version 0.3.2
+Version 1.0.0
 
 [![Build Status](https://secure.travis-ci.org/euforic/banking.js.png)](http://travis-ci.org/euforic/banking.js)
 [![NPM version](https://badge.fury.io/js/banking.png)](https://npmjs.org/package/banking)
@@ -218,7 +218,7 @@ Example
 
 (The MIT License)
 
-Copyright (c) 2014 Christian Sullivan &lt;cs@bodhi5.com&gt;
+Copyright (c) 2015 Christian Sullivan &lt;cs@bodhi5.com&gt;
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
