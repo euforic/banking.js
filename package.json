@@ -1,7 +1,7 @@
 {
   "name": "banking",
   "description": "The missing Bank API for getting you statement data",
-  "version": "0.3.4",
+  "version": "0.4.0",
   "author": "Christian Sullivan <cs@euforic.co>",
   "keywords": [
     "banking",
