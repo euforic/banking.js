@@ -64,7 +64,7 @@ var bank = Banking({
 });
 ```
 
-### banking.getStatement(Obj, fn)
+### bank.getStatement(Obj, fn)
 Fetch and parse transactions for the selected date rang
 
 ```js
@@ -79,7 +79,7 @@ bank.getStatement({start:20130101, end:20131101}, function(err, res){
 Parse an OFX file into JSON
 
 ```javascript
-banking.parseFile('/myfile.ofx', function (res) {
+Banking.parseFile('/myfile.ofx', function (res) {
   console.log(res);
 });
 ```
