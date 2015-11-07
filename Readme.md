@@ -56,7 +56,7 @@ var bank = Banking({
   , bankId: '0123456' /* If bank account use your bank routing number otherwise set to null */
   , user: 'username'
   , password: 'password'
-  , accId: 0123456789 /* Account Number */
+  , accId: '0123456789' /* Account Number */
   , accType: 'CHECKING' /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
   , ofxVer: 103 /* default 102 */
   , app: 'QBKS' /* default  'QWIN' */
