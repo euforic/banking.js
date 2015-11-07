@@ -53,7 +53,7 @@ var bank = Banking({
     fid: 10898
   , fidOrg: 'B1'
   , url: 'https://yourBanksOfxApiURL.com'
-  , bankId: 0123456 /* If bank account use your bank routing number otherwise set to null */
+  , bankId: '0123456' /* If bank account use your bank routing number otherwise set to null */
   , user: 'username'
   , password: 'password'
   , accId: 0123456789 /* Account Number */
@@ -79,7 +79,7 @@ bank.getStatement({start:20130101, end:20131101}, function(err, res){
 Parse an OFX file into JSON
 
 ```javascript
-banking.parseOfxFile('/myfile.ofx', function (res) {
+banking.parseFile('/myfile.ofx', function (res) {
   console.log(res);
 });
 ```
