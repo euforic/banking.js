@@ -53,10 +53,10 @@ var bank = Banking({
     fid: 10898
   , fidOrg: 'B1'
   , url: 'https://yourBanksOfxApiURL.com'
-  , bankId: 0123456 /* If bank account use your bank routing number otherwise set to null */
+  , bankId: '0123456' /* If bank account use your bank routing number otherwise set to null */
   , user: 'username'
   , password: 'password'
-  , accId: 0123456789 /* Account Number */
+  , accId: '0123456789' /* Account Number */
   , accType: 'CHECKING' /* CHECKING || SAVINGS || MONEYMRKT || CREDITCARD */
   , ofxVer: 103 /* default 102 */
   , app: 'QBKS' /* default  'QWIN' */
@@ -64,7 +64,7 @@ var bank = Banking({
 });
 ```
 
-### banking.getStatement(Obj, fn)
+### bank.getStatement(Obj, fn)
 Fetch and parse transactions for the selected date rang
 
 ```js
@@ -79,7 +79,7 @@ bank.getStatement({start:20130101, end:20131101}, function(err, res){
 Parse an OFX file into JSON
 
 ```javascript
-banking.parseOfxFile('/myfile.ofx', function (res) {
+Banking.parseFile('/myfile.ofx', function (res) {
   console.log(res);
 });
 ```
