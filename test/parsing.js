@@ -38,10 +38,24 @@ describe('Banking', function(){
 
   describe('.parseFile', function(){
     it('should read the provided file and return JSON', function(done){
-
       Banking.parseFile(__dirname +'/fixtures/sample.ofx', function (res) {
         res.body.should.be.an.instanceof(Object);
         res.body.should.have.property('OFX');
+        res.body.OFX.should.have.property('SIGNONMSGSRSV1');
+        res.body.OFX.SIGNONMSGSRSV1.should.have.property('SONRS');
+        res.body.OFX.SIGNONMSGSRSV1.SONRS.should.have.property('STATUS');
+        done();
+      });
+    });
+
+    it('should read a OFX file with end-tags in elements and return JSON', function(done){
+      Banking.parseFile(__dirname +'/fixtures/sample-with-end-tags.ofx', function (res) {
+        res.body.should.be.an.instanceof(Object);
+        res.body.should.have.property('OFX');
+        res.body.should.have.property('OFX');
+        res.body.OFX.should.have.property('SIGNONMSGSRSV1');
+        res.body.OFX.SIGNONMSGSRSV1.should.have.property('SONRS');
+        res.body.OFX.SIGNONMSGSRSV1.SONRS.should.have.property('STATUS');
         done();
       });
     });
