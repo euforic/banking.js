@@ -1,7 +1,7 @@
 {
   "name": "banking",
   "description": "The missing Bank API for getting you statement data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Christian Sullivan <cs@euforic.co>",
   "keywords": [
     "banking",
@@ -14,12 +14,12 @@
   "homepage": "http://euforic.github.com/banking.js",
   "dependencies": {
     "debug": "^2.2.0",
-    "superagent": "^1.4.0",
-    "xml2js": "^0.4.12"
+    "superagent": "^2.2.0",
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
-    "mocha": "^2.3.3",
-    "should": "^7.1.0"
+    "mocha": "^3.0.2",
+    "should": "^11.1.0"
   },
   "repository": {
     "type": "git",
