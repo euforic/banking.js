@@ -5,7 +5,7 @@ var Banking = require('..')
 describe('Banking', function(){
 
   describe('banking.getStatement', function() {
-    it('should return valid xml from bank server', function(done){
+    it('should return valid xml from the wells fargo server', function(done){
 
       var banking = Banking({
         fid: 3001,
@@ -18,6 +18,28 @@ describe('Banking', function(){
         url: 'https://www.oasis.cfree.com/3001.ofxgp'
       });
 
+      //If second param is omitted JSON will be returned by default
+      banking.getStatement({start:20131101, end:20131120}, function (err, res) {
+        if(err) done(res)
+        res.body.should.be.an.instanceof(Object);
+        res.body.should.have.property('OFX');
+        done();
+      });
+    });
+
+    it('should return valid xml from the discovercard server', function(done){
+
+      var banking = Banking({
+        fid: 7101,
+        fidOrg: 'Discover Financial Services',
+        accType: 'checking',
+        accId: '234343434',
+        bankId: '342342',
+        user: 'username',
+        url: 'https://ofx.discovercard.com',
+        password: 'password',
+        headers: ['Content-Type', 'Host', 'Content-Length', 'Connection']
+      });
 
       //If second param is omitted JSON will be returned by default
       banking.getStatement({start:20131101, end:20131120}, function (err, res) {

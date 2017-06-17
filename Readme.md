@@ -61,6 +61,11 @@ var bank = Banking({
   , ofxVer: 103 /* default 102 */
   , app: 'QBKS' /* default  'QWIN' */
   , appVer: '1900' /* default 1700 */
+  
+  // headers are only required if your ofx server is very picky, defaults below
+  // add only the headers you want sent
+  // the order in this array is also the order they are sent
+  , headers: ['Host', 'Accept', 'User-Agent', 'Content-Type', 'Content-Length', 'Connection']
 });
 ```
 
