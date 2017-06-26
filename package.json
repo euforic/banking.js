@@ -14,7 +14,6 @@
   "homepage": "http://euforic.github.com/banking.js",
   "dependencies": {
     "debug": "^2.3.3",
-    "superagent": "^3.1.0",
     "xml2js": "^0.4.17"
   },
   "devDependencies": {
