@@ -27,6 +27,6 @@
   "main": "lib/banking.js",
   "scripts": {
     "prepublish": "npm prune",
-    "test": "make test"
+    "test": "mocha --require should --reporter spec --globals i"
   }
 }

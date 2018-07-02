@@ -212,8 +212,80 @@ Example
 }
 ```
 
-## TODO
-  * Retrieve users available accounts with out account numbers
+### bank.getAccounts(fn)
+Get a list of your accounts on the bank server
+
+```js
+
+bank.getAccounts(function(err, res){
+  if(err) console.log(err)
+  console.log(res);
+});
+```
+
+#### Response
+
+```json
+{
+  "header": {
+    "Content-Type": " application/x-ofx",
+    "Date": " Mon, 02 Jul 2018 02",
+    "Content-Length": " 707",
+    "Connection": " close",
+    "Set-Cookie": " DCID=www21; path=/; domain=xxxxxxx",
+    "OFXHEADER": "100",
+    "DATA": "OFXSGML",
+    "VERSION": "102",
+    "SECURITY": "NONE",
+    "ENCODING": "USASCII",
+    "CHARSET": "1252",
+    "COMPRESSION": "NONE",
+    "OLDFILEUID": "NONE",
+    "NEWFILEUID": "xxxxxxxxxxxxxxxxxxxx"
+  },
+  "body": {
+    "OFX": {
+      "SIGNONMSGSRSV1": {
+        "SONRS": {
+          "STATUS": {
+            "CODE": "0",
+            "SEVERITY": "INFO"
+          },
+          "DTSERVER": "20180701224054.774[-4:EDT]",
+          "LANGUAGE": "ENG",
+          "FI": {
+            "ORG": "xxx xxx xx",
+            "FID": "####"
+          }
+        }
+      },
+      "SIGNUPMSGSRSV1": {
+        "ACCTINFOTRNRS": {
+          "TRNUID": "xxxxxxxxxxxxxxxxxxxxxxx",
+          "STATUS": {
+            "CODE": "0",
+            "SEVERITY": "INFO"
+          },
+          "ACCTINFORS": {
+            "DTACCTUP": "19990101170000",
+            "ACCTINFO": {
+              "CCACCTINFO": {
+                "CCACCTFROM": {
+                  "ACCTID": "xxxxxxxxxxxxxxxxxxxxx"
+                },
+                "SUPTXDL": "Y",
+                "XFERSRC": "N",
+                "XFERDEST": "N",
+                "SVCSTATUS": "ACTIVE"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+```
 
 ## More Information
   * [Banking Connection Parameters](http://www.ofxhome.com/index.php/home/directory)
