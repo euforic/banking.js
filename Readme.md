@@ -1,5 +1,5 @@
 # [Banking.js](http://euforic.co/banking.js)
-Version 1.1.0
+Version 1.2.0
 
 [![Build Status](https://secure.travis-ci.org/euforic/banking.js.png)](http://travis-ci.org/euforic/banking.js)
 [![NPM version](https://badge.fury.io/js/banking.png)](https://npmjs.org/package/banking)
