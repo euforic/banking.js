@@ -13,12 +13,13 @@
   "private": false,
   "homepage": "http://euforic.github.com/banking.js",
   "dependencies": {
-    "debug": "^2.3.3",
-    "xml2js": "^0.4.17"
+    "debug": "^4.4.0",
+    "ofx": "^0.5.0",
+    "xml2js": "^0.6.2"
   },
   "devDependencies": {
-    "mocha": "^3.2.0",
-    "should": "^11.1.1"
+    "mocha": "^11.2.2",
+    "should": "^13.2.3"
   },
   "repository": {
     "type": "git",
@@ -26,7 +27,7 @@
   },
   "main": "lib/banking.js",
   "scripts": {
-    "prepublish": "npm prune",
+    "prepare": "npm prune",
     "test": "mocha --require should --reporter spec --globals i"
   }
 }
