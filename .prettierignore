@@ -1,0 +1,55 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+*.tgz
+
+# Logs and temporary files
+*.log
+*.log.*
+.eslintcache
+.DS_Store
+tmp/
+temp/
+
+# Test output
+test-results.json
+
+# Environment files
+.env*
+
+# Minified files
+*.min.js
+*.min.css
+
+# Generated files that should not be formatted
+# (Add any OFX parsing generated files if applicable)
+
+# Lock files (preserve exact format)
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Version control
+.git/
+.svn/
+.hg/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
