@@ -1,13 +1,11 @@
-var Banking = require('..')
-  , data = require('./fixtures/data')
-  , mocha = require('mocha');
+const Banking = require('..'),
+  data = require('./fixtures/data'),
+  mocha = require('mocha');
 
-describe('Banking', function(){
-
-  describe('banking.getStatement', function() {
-    it('should return valid xml from the wells fargo server', function(done){
-
-      var banking = Banking({
+describe('Banking', () => {
+  describe('banking.getStatement', () => {
+    it('should return valid xml from the wells fargo server', done => {
+      const banking = Banking({
         fid: 3001,
         fidOrg: 'Wells Fargo',
         accType: 'checking',
@@ -19,17 +17,16 @@ describe('Banking', function(){
       });
 
       //If second param is omitted JSON will be returned by default
-      banking.getStatement({start:20131101, end:20131120}, function (err, res) {
-        if(err) done(res)
+      banking.getStatement({ start: 20131101, end: 20131120 }, (err, res) => {
+        if (err) done(res);
         res.body.should.be.an.instanceof(Object);
         res.body.should.have.property('OFX');
         done();
       });
     });
 
-    it('should return valid xml from the discovercard server', function(done){
-
-      var banking = Banking({
+    it('should return valid xml from the discovercard server', done => {
+      const banking = Banking({
         fid: 7101,
         fidOrg: 'Discover Financial Services',
         accType: 'checking',
@@ -42,8 +39,8 @@ describe('Banking', function(){
       });
 
       //If second param is omitted JSON will be returned by default
-      banking.getStatement({start:20131101, end:20131120}, function (err, res) {
-        if(err) done(res)
+      banking.getStatement({ start: 20131101, end: 20131120 }, (err, res) => {
+        if (err) done(res);
         res.body.should.be.an.instanceof(Object);
         res.body.should.have.property('OFX');
         done();
@@ -51,16 +48,16 @@ describe('Banking', function(){
     });
   });
 
-  describe('.version', function (){
-    it('should output the current version', function (done){
+  describe('.version', () => {
+    it('should output the current version', done => {
       Banking.version.should.equal(require('../package').version);
       done();
     });
-  })
+  });
 
-  describe('.parseFile', function(){
-    it('should read the provided file and return JSON', function(done){
-      Banking.parseFile(__dirname +'/fixtures/sample.ofx', function (res) {
+  describe('.parseFile', () => {
+    it('should read the provided file and return JSON', done => {
+      Banking.parseFile(`${__dirname}/fixtures/sample.ofx`, res => {
         res.body.should.be.an.instanceof(Object);
         res.body.should.have.property('OFX');
         res.body.OFX.should.have.property('SIGNONMSGSRSV1');
@@ -70,8 +67,8 @@ describe('Banking', function(){
       });
     });
 
-    it('should read a OFX file with end-tags in elements and return JSON', function(done){
-      Banking.parseFile(__dirname +'/fixtures/sample-with-end-tags.ofx', function (res) {
+    it('should read a OFX file with end-tags in elements and return JSON', done => {
+      Banking.parseFile(`${__dirname}/fixtures/sample-with-end-tags.ofx`, res => {
         res.body.should.be.an.instanceof(Object);
         res.body.should.have.property('OFX');
         res.body.should.have.property('OFX');
@@ -83,10 +80,9 @@ describe('Banking', function(){
     });
   });
 
-  describe('.parse', function(){
-    it('should read the provided string and return JSON', function(done){
-
-      Banking.parse(data.ofxString, function (res) {
+  describe('.parse', () => {
+    it('should read the provided string and return JSON', done => {
+      Banking.parse(data.ofxString, res => {
         res.body.should.be.an.instanceof(Object);
         res.body.should.have.property('OFX');
         done();
